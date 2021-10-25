@@ -1,0 +1,52 @@
+.devise-main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.login-title {
+  text-align: center;
+  padding: 20px 0px;
+  background-color: blue;
+  color: white;
+  font-size: 32px;
+}
+
+.form-detail {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.form-detail {
+  background-color: rgb(243, 241, 239);
+}
+
+.field {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-box {
+  width: 80%;
+}
+
+.submit-btn {
+  width: 15%;
+  padding: 10px;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.actions {
+  margin-bottom: 15px;
+}
+
+.devise-links a{
+  text-decoration: none;
+  color: black;
+}
+
+.devise-links {
+  margin-bottom: 100px;
+}
