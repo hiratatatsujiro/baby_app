@@ -50,3 +50,10 @@
 .devise-links {
   margin-bottom: 100px;
 }
+
+.prefecture-box {
+  display: block;
+  width: 20%;
+  height: 40px;
+  margin-left: 84px;
+}

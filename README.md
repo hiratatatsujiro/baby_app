@@ -29,8 +29,10 @@ Things you may want to cover:
 |---------------------|----------|-------------|
 | name                | string   | null: false |
 | email               | string   | null: false |
-| encrypted_password  | string   | null: false |
-| address             | string   | null: false |   
+| encrypted_password  | string   | null: false | 
+| prefectures_id      | integer  | null: false |
+| city                | string   | null: false |
+| house_number        | string   | null: false |         
 
 ### Association
 - has_many children, through :children_users
@@ -42,7 +44,9 @@ Things you may want to cover:
 |---------------------|------------|-------------------|
 | name                | string     | null: false       |
 | birthday            | date       | null: false       |
-| address             | string     | null: false       |
+| prefectures_id      | integer    | null: false       |
+| city                | string     | null: false       |
+| house_number        | string     | null: false       |   
 | gender_id           | integer    | null: false       |
 | user                | references | foreign_key: true |
 ### Association

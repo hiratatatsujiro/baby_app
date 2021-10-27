@@ -2,16 +2,17 @@
    <h1 class="login-title">新規登録</h1>
 
   <%= form_with model: @user, url: user_registration_path, class: "form-main", local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+ 
   <div class="form-detail">
+   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
     <%= f.label :名前 %><br />
-    <%= f.email_field :name, autofocus: true, autocomplete: "name", class: "login-box" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "login-box", placeholder: "赤田赤生" %>
   </div>
 
   <div class="field">
     <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autocomplete: "email", class: "login-box" %>
+    <%= f.email_field :email, autocomplete: "email", class: "login-box", placeholder: "akachan@gmail.com" %>
   </div>
 
   <div class="field">
@@ -29,9 +30,9 @@
 
   <div class="field">
     <%= f.label :住所%><br />
-    <%= f.password_field :adress, autocomplete: "new-password", class: "login-box" %>
-    <%= f.text_field :city, class: "login-box"%>
-    <%= f.text_field :house_number ,class: "login-box"%>
+    <%= f.collection_select(:prefectures_id, Prefectures.all, :id, :name, {}, {class: "prefecture-box"}) %>
+    <%= f.text_field :city, class: "login-box", placeholder: "市区町村" %>
+    <%= f.text_field :house_number ,class: "login-box", placeholder: "番地" %>
   </div>
 
   <div class="actions">
