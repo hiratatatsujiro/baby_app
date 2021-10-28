@@ -1,0 +1,26 @@
+<h1>子どもの登録</h1>
+
+<%= form_with model: @child, url: children_path, local: true do |f| %>
+  
+  <div class="topic">
+    <div class="content">
+     <label class="name">名前</label>
+    </div>
+  <%= f.text_field :name %>
+  </div>
+
+  <div class="topic">
+    <div class="content">
+     <label class="image">画像</label>
+    </div>
+  <%= f.file_field :image %>
+  </div>
+
+  <div class="topic">
+    <div class="content">
+     <label class="name">性別</label>
+    </div>
+  <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {}) %>
+  </div>
+
+<% end %>
