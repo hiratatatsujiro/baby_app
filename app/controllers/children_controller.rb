@@ -1,6 +1,6 @@
 class ChildrenController < ApplicationController
   def index
-    @children = Children.all
+    @children = Child.all
   end
 
   def new

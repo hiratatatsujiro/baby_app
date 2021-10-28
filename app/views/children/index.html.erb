@@ -1,1 +1,6 @@
-index
+<%= link_to "子どもの登録", new_child_path %>
+  <div>
+    <% @children.each do |child| %>
+      <%= child.name %>
+    <% end %>
+  </div>

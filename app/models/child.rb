@@ -2,6 +2,7 @@ class Child < ApplicationRecord
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefectures
+  belongs_to :gender
 
   with_options presence: true do
     validates :name
