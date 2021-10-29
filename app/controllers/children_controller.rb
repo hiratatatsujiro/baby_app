@@ -16,4 +16,9 @@ class ChildrenController < ApplicationController
       render :new
     end
   end
+
+  private
+  def child_params
+    params.require(:child).permit(:name, :image, :birthday, :gender_id).merge(user_id: current_user.id)
+  end
 end

@@ -43,10 +43,7 @@ Things you may want to cover:
 | Column              | Type       | Options           |
 |---------------------|------------|-------------------|
 | name                | string     | null: false       |
-| birthday            | date       | null: false       |
-| prefectures_id      | integer    | null: false       |
-| city                | string     | null: false       |
-| house_number        | string     | null: false       |   
+| birthday            | date       | null: false       | 
 | gender_id           | integer    | null: false       |
 | user                | references | foreign_key: true |
 ### Association
