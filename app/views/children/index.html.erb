@@ -1,3 +1,4 @@
+
 <div class="header">
   <div class="header-left">Baby app</div>
   <div class="header-right">
@@ -16,17 +17,27 @@
 </div>
 
 <div class="main">
+  <div class="main-children">
+      <div class="register-child">
+        <%= link_to "子どもの登録", new_child_path, class: "child-btn" %>
+      </div>
+      <div class="children-index">
+        <% @children.each do |child| %>
+          <div class="child-information">
+            <%= child.name %>
+            <%= image_tag child.image.variant(resize: '150x150')%>
+          </div>
+        <% end %>
+      </div>
+  </div>
 
-<%= link_to "子どもの登録", new_child_path %>
-
-<div>
-  <% @children.each do |child| %>
-    <%= child.name %>
-  <% end %>
+  <div class="main-diary">
+    日記がきます
+  </div>
 </div>
 
-</div>
 
 <div class="footer">
   baby is treasure ...
 </div>
+
