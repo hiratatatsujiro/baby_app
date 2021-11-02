@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :children
+  has_many :diaries
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefectures
 
