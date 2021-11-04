@@ -14,10 +14,12 @@ class DiariesController < ApplicationController
     end
   end
 
+
   def show
     @diary = Diary.find(params[:id])
     @comment = Comment.new
   end
+
 
     private
     def diary_params
