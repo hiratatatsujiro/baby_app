@@ -32,6 +32,7 @@
   height: calc(100vh - 200px);
   background-color: cornsilk;
   display: flex;
+  overflow: scroll;
 }
 
 .main-children {
@@ -39,7 +40,7 @@
   padding: 40px;
 }
 
-.main-children a{
+.register-child a{
   text-decoration: none;
   color: black;
   font-size: 24px;
@@ -54,6 +55,16 @@
   line-height: 50px;
 }
 
+.main-diary {
+  width: calc(100% - 40%);
+  padding: 40px;
+  text-align: center;
+}
+
+.image {
+  margin-bottom: 30px;
+}
+
 .register-child {
   margin-bottom: 50px;  
 }
@@ -64,8 +75,8 @@
 
 .input-birth {
   display: flex;
-
 }
+
 
 .footer {
   height: 100px;

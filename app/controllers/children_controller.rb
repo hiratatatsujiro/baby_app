@@ -1,6 +1,7 @@
 class ChildrenController < ApplicationController
   def index
     @children = Child.all
+    @diaries = Diary.all
   end
 
   def new
