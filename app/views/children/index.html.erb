@@ -17,12 +17,37 @@
 
 <div class="main">
 
+<<<<<<< Updated upstream
 <%= link_to "子どもの登録", new_child_path %>
 
 <div>
   <% @children.each do |child| %>
     <%= child.name %>
   <% end %>
+=======
+  <div class="main-diary">
+    <div class="register-child">
+        <%= link_to "日記を書く", new_diary_path, class: "child-btn" %>
+    </div>
+    <div class="diary-index">
+      <% @diaries.each do |diary| %>
+        <%= link_to diary_path(diary), class: "diary-css" do %>
+          <div class="diary-information">
+            <div class="title">
+              <%= diary.title %>
+            </div>
+            <div class="date">
+              <%= diary.created_at %>
+            </div>
+            <div class="image">
+              <%= image_tag diary.image.variant(resize: '300x300')%>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+>>>>>>> Stashed changes
 </div>
 
 </div>
