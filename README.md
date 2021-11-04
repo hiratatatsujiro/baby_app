@@ -73,7 +73,7 @@ Things you may want to cover:
 - belongs_to :children
 - has_many :comments, dependent: :medicals
 
-## commentsテーブル
+## medical_commentsテーブル
 | Column              | Type       | Options           |
 |---------------------|------------|-------------------|
 | contact             | string     | null: false       |
@@ -92,4 +92,14 @@ Things you may want to cover:
 | children            | references | foreign_key: true |
 ### Association
 - belongs_to :children
+
+## commentsテーブル
+| Column              | Type       | Options           |
+|---------------------|------------|-------------------|
+| text                | string     | null: false       |
+| user                | references | foreign_key: true |
+| diary               | references | foreign_key: true |
+### Association
+- belongs_to :user
+- belongs_to :diary
 
