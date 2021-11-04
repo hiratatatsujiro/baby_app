@@ -31,12 +31,16 @@
       </div>
   </div>
 
+
   <div class="main-diary">
     <div class="register-child">
         <%= link_to "日記を書く", new_diary_path, class: "child-btn" %>
     </div>
     <div class="diary-index">
-        <% @diaries.each do |diary| %>
+
+      <% @diaries.each do |diary| %>
+        <%= link_to diary_path(diary), class: "diary-css" do %>
+
           <div class="diary-information">
             <div class="title">
               <%= diary.title %>
@@ -49,8 +53,11 @@
             </div>
           </div>
         <% end %>
+
+      <% end %>
     </div>
   </div>
+
 </div>
 
 
