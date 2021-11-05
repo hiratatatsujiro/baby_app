@@ -6,7 +6,7 @@ class CreateMedicals < ActiveRecord::Migration[6.0]
       t.integer :drug_id, null: false       
       t.integer :name_id, null: false       
       t.text :memo, null: false       
-      t.references :children, foreign_key: true
+      t.references :child, foreign_key: true
       t.timestamps
     end
   end

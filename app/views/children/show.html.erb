@@ -15,6 +15,16 @@
   </div>
 
   <div class="child-medical">
-    
-  </div>
+    <div class="register-child">
+     <%= link_to "通院登録", new_child_medical_path(@child), class: "child-btn" %>
+    </div>
+    <div class="medical-title">これまでの通院</div>
+      <% @medicals.each do |medical| %>
+        <div class="medical-date">
+          <%= link_to child_medical_path(medical) do %>
+            <%= medical.day %> <%= medical.name.name%> <%= medical.hospital %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 </div>
