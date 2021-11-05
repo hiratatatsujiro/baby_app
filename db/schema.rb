@@ -69,10 +69,10 @@ ActiveRecord::Schema.define(version: 2021_11_05_012058) do
     t.integer "drug_id", null: false
     t.integer "name_id", null: false
     t.text "memo", null: false
-    t.bigint "children_id"
+    t.bigint "child_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["children_id"], name: "index_medicals_on_children_id"
+    t.index ["child_id"], name: "index_medicals_on_child_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,5 +96,5 @@ ActiveRecord::Schema.define(version: 2021_11_05_012058) do
   add_foreign_key "comments", "diaries"
   add_foreign_key "comments", "users"
   add_foreign_key "diaries", "users"
-  add_foreign_key "medicals", "children", column: "children_id"
+  add_foreign_key "medicals", "children"
 end
