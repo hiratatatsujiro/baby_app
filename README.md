@@ -35,9 +35,9 @@ Things you may want to cover:
 | house_number        | string   | null: false |         
 
 ### Association
-- has_many children, through :children_users
-- has_many children_users
-- has_many :comments
+- has_many children
+- has_many :comments, dependent: :destroy
+- has_many :diaries
 
 ## childrenテーブル
 | Column              | Type       | Options           |
@@ -47,18 +47,9 @@ Things you may want to cover:
 | gender_id           | integer    | null: false       |
 | user                | references | foreign_key: true |
 ### Association
-- has_many :users, through :children_users
-- has_many :children_users
-- has_many :diaries
-
-## children_usersテーブル
-| Column              | Type       | Options           |
-|---------------------|------------|-------------------|
-| user                | references | foreign_key: true |
-| children            | references | foreign_key: true |
-### Association
 - belongs_to :user
-- belongs_to :children
+- has_many :medicals
+
 
 ## medicalsテーブル
 | Column              | Type       | Options           |
@@ -72,6 +63,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :children
 - has_many :comments, dependent: :medicals
+
 
 ## medical_commentsテーブル
 | Column              | Type       | Options           |
