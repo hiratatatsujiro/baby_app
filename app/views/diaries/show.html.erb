@@ -1,1 +1,42 @@
-詳細です
+<div class="diary-show">
+  <div class="diary-box">
+    <div class="diary-day">投稿日：<%= @diary.day %></div>
+    <div class="diary-title">タイトル：<%= @diary.title %></div>
+    <div class="diary-image"><%= image_tag @diary.image %></div>
+    <div class="diary-text"><%= @diary.text %></div>
+  </div>
+
+  <div class="comment-box">
+    <div class="comment-new">
+      <div class="comment-new-box">
+        <div class="title-comment">コメント投稿</div>
+        <%= form_with model: [@diary, @comment], local: true do |f| %>
+          <div class="form">
+            <%= f.text_area :text, placeholder: "コメント", class: "comment-input" %>
+          </div>
+          <div class="action">
+            <%= f.submit "コメント", class: "submit-btn-comment" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="comment-index">
+      <div class="comment-index-box">
+        <% @comments.each do |comment| %>
+          <div class="comment-information">
+            <div class="comment-user">
+              投稿者：<%= comment.user.name %>
+            </div>
+            <div class="comment-day">
+             <%= comment.created_at %>
+            </div>
+            <div class="comment-text">
+             <%= comment.text %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
