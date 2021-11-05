@@ -20,7 +20,7 @@ class ChildrenController < ApplicationController
 
   def show
     @child = Child.find(params[:id])
-    @medicals = Medical.all
+    @medicals = @child.medicals
   end
 
   private
