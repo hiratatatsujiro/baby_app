@@ -23,10 +23,12 @@
       </div>
       <div class="children-index">
         <% @children.each do |child| %>
+          <%= link_to child_path(child) do %>
           <div class="child-information">
             <%= child.name %>
             <%= image_tag child.image.variant(resize: '150x150')%>
           </div>
+          <% end %>
         <% end %>
       </div>
   </div>

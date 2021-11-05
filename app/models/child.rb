@@ -1,5 +1,6 @@
 class Child < ApplicationRecord
   belongs_to :user
+  has_many :medicals
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefectures
   belongs_to :gender
@@ -11,5 +12,5 @@ class Child < ApplicationRecord
     validates :image
   end
 
-  validates :gender_id, numericality: { other_than: 1,message: "を選択して下さい"}
+  validates :gender_id, numericality: { other_than: 1 }
 end
