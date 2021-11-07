@@ -17,7 +17,10 @@ class MedicalsController < ApplicationController
   end
 
   def show
+    @child = Child.find(params[:child_id])
     @medical = Medical.find(params[:id])
+    @medical_comment = MedicalComment.new
+    @medical_comments = @medical.medical_comments
   end
 
   private

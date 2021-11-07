@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_05_012058) do
+ActiveRecord::Schema.define(version: 2021_11_07_062223) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,18 @@ ActiveRecord::Schema.define(version: 2021_11_05_012058) do
     t.index ["user_id"], name: "index_diaries_on_user_id"
   end
 
+  create_table "medical_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "user_id"
+    t.bigint "medical_id"
+    t.bigint "child_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["child_id"], name: "index_medical_comments_on_child_id"
+    t.index ["medical_id"], name: "index_medical_comments_on_medical_id"
+    t.index ["user_id"], name: "index_medical_comments_on_user_id"
+  end
+
   create_table "medicals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "day", null: false
     t.string "hospital", null: false
@@ -96,5 +108,8 @@ ActiveRecord::Schema.define(version: 2021_11_05_012058) do
   add_foreign_key "comments", "diaries"
   add_foreign_key "comments", "users"
   add_foreign_key "diaries", "users"
+  add_foreign_key "medical_comments", "children"
+  add_foreign_key "medical_comments", "medicals"
+  add_foreign_key "medical_comments", "users"
   add_foreign_key "medicals", "children"
 end

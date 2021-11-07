@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :children
   has_many :diaries
   has_many :comments
+  has_many :medical_comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefectures
 

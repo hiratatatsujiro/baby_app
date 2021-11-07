@@ -1,6 +1,7 @@
 class Child < ApplicationRecord
   belongs_to :user
   has_many :medicals
+  has_many :medical_comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefectures
   belongs_to :gender

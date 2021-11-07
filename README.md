@@ -68,9 +68,10 @@ Things you may want to cover:
 ## medical_commentsテーブル
 | Column              | Type       | Options           |
 |---------------------|------------|-------------------|
-| contact             | string     | null: false       |
+| content             | string     | null: false       |
 | user                | references | foreign_key: true |
 | medical             | references | foreign_key: true |
+| child               | references | foreign_key: true |
 ### Association
 - belongs_to :user
 - belongs_to :medical

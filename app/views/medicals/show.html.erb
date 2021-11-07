@@ -1,12 +1,54 @@
 <div class="medical-show">
+
   <div class="medical-information">
     <div class="medical-day">
-      <%= @medical.day %>
+      病気になった日：<%= @medical.day %>
     </div>
     <div class="medical-name">
-      <%= @medical.name.name %>
+      病名：<%= @medical.name.name %>
    </div>
    <div class="medical-image">
       <%= image_tag @medical.image %>
+   </div>
+   <div class="medical-hospital">
+      病院：<%= @medical.hospital %>
+   </div>
+   <div class="medical-drug">
+      薬：<%= @medical.drug.name %>
+   </div>
+   <div class="medical-memo">
+      メモ：<%= @medical.memo %>
+   </div>
+  </div>
+
+   <div class="medical-comment">
+      <div class="comment-new-medical-box">
+        <%= form_with model: [@child, @medical, @medical_comment], local: true do |f| %>
+        コメントする
+        <div class="form">
+            <%= f.text_area :content, placeholder: "コメント", class: "comment-input" %>
+          </div>
+          <div class="action">
+            <%= f.submit "コメント", class: "submit-btn-comment" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="comment-medical-index">
+         <div class="medical-comment-index">
+            <% @medical_comments.each do |comment| %>
+               <div class="comment-information">
+            <div class="comment-user">
+              投稿者：<%= comment.user.name %>
+            </div>
+            <div class="comment-day">
+             <%= comment.created_at %>
+            </div>
+            <div class="comment-text">
+             <%= comment.content %>
+            </div>
+          </div>
+            <% end %>
+         </div>
+      </div>
    </div>
 </div>

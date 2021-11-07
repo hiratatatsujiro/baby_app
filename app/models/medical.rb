@@ -1,4 +1,5 @@
 class Medical < ApplicationRecord
+  has_many :medical_comments
   belongs_to :child
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions

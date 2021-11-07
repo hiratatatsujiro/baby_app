@@ -1,0 +1,56 @@
+.medical-show {
+  display: flex;
+}
+
+.medical-information {
+  padding: 40px;
+  text-align: center;
+  font-size: 24px;
+  background-color: blanchedalmond;
+}
+
+.medical-day {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.medical-name {
+  padding: 10px;
+  border: 1px solid black;
+  border-top: none;
+}
+
+.medical-image {
+  padding: 10px;
+  border: 1px solid black;
+  border-top: none;
+}
+
+.medical-hospital {
+  padding: 10px;
+  border: 1px solid black;
+  border-top: none;
+}
+
+.medical-drug {
+  padding: 10px;
+  border: 1px solid black;
+  border-top: none;
+}
+
+.medical-memo {
+  padding: 10px;
+  border: 1px solid black;
+  border-top: none;
+  text-align: left;
+}
+
+.medical-comment {
+  padding: 40px;
+  background-color: rgb(247, 216, 170);
+  width: 100%;
+}
+
+.comment-medical-index {
+  margin-top: 40px;
+}
