@@ -21,7 +21,7 @@
     <div class="medical-title">これまでの通院</div>
       <% @medicals.each do |medical| %>
         <div class="medical-date">
-          <%= link_to child_medical_path(medical) do %>
+          <%= link_to child_medical_path(@child, medical) do %>
             <%= medical.day %> <%= medical.name.name%> <%= medical.hospital %>
           <% end %>
         </div>
