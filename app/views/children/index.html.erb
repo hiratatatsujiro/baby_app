@@ -1,33 +1,20 @@
 
-<div class="header">
- <div class="header-left">Baby app</div>
-  <div class="header-right">
-    <% if user_signed_in? %>
-      <ul class="header-list">
-        <li><%= link_to current_user.name %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
-      </ul>
-    <% else %>
-      <ul class="header-list">
-        <li><%= link_to "新規ユーザー登録", new_user_registration_path %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-      </ul>
-    <% end %>
-  </div>
- </div>
 
  <div class="main">
   <div class="main-children">
       <div class="register-child">
         <%= link_to "子どもの登録", new_child_path, class: "child-btn" %>
       </div>
+      
       <div class="children-index">
         <% @children.each do |child| %>
+          <% if user_signed_in? && child.user_id == current_user.id %>
           <%= link_to child_path(child) do %>
           <div class="child-information">
             <%= child.name %>
             <%= image_tag child.image.variant(resize: '150x150')%>
           </div>
+          <% end %>
           <% end %>
         <% end %>
       </div>
@@ -41,8 +28,8 @@
     <div class="diary-index">
 
       <% @diaries.each do |diary| %>
+        <% if user_signed_in? && diary.user_id == current_user.id %>
         <%= link_to diary_path(diary), class: "diary-css" do %>
-
           <div class="diary-information">
             <div class="title">
               <%= diary.title %>
@@ -55,7 +42,7 @@
             </div>
           </div>
         <% end %>
-
+        <% end %>
       <% end %>
     </div>
   </div>
