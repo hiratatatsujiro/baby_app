@@ -4,6 +4,7 @@
 <%= form_with model: @diary, url: diaries_path, class: "form-main", local: true do |f| %>
   
    <div class="form-detail">
+    <%= render "devise/shared/error_messages", resource: @diary %>
   <div class="field">
     <div class="content">
      <label class="name">タイトル</label>
