@@ -18,54 +18,39 @@ RSpec.describe Medical, type: :model do
 
   context '内容に問題がある場合' do
     it 'dayがなければ登録できない' do
-      @user.name = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Name can't be blank")
+      @medical.day = ""
+      @medical.valid?
+      expect(@medical.errors.full_messages).to include("Day can't be blank")
     end
 
-    it 'emailがなければ登録できない' do
-      @user.email = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Email can't be blank")
+    it 'imageがなければ登録できない' do
+      @medical.image = nil
+      @medical.valid?
+      expect(@medical.errors.full_messages).to include("Image can't be blank")
     end
 
-    it 'emaiに@lがなければ登録できない' do
-      @user.email = "lopo"
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Email is invalid")
+    it 'hospitalがなければ登録できない' do
+      @medical.hospital = ""
+      @medical.valid?
+      expect(@medical.errors.full_messages).to include("Hospital can't be blank")
     end
 
-    it 'emailが重複していると登録できない' do
-      @user.save
-      another = FactoryBot.build(:user)
-      another.email = @user.email 
-      another.valid?
-      expect(another.errors.full_messages).to include("Email has already been taken")
+    it 'name_idがなければ登録できない' do
+      @medical.name_id = 1
+      @medical.valid?
+      expect(@medical.errors.full_messages).to include("Name must be other than 1")
     end
 
-    it 'passwordがなければ登録できない' do
-      @user.password = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Password can't be blank")
+    it 'drug_idがなければ登録できない' do
+      @medical.drug_id = 1
+      @medical.valid?
+      expect(@medical.errors.full_messages).to include("Drug must be other than 1")
     end
 
-    it 'passwordが5文字以下であれば登録できない' do
-      @user.password = "111aa"
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
-    end
-
-
-    it 'prefectures_idがなければ登録できない' do
-      @user.prefectures_id = 1
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Prefectures must be other than 1")
-    end
-
-    it 'cityがなければ登録できない' do
-      @user.city = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("City can't be blank")
+    it 'childが紐づけてられていなければ登録できない' do
+      @medical.child = nil
+      @medical.valid?
+      expect(@medical.errors.full_messages).to include("Child must exist")
     end
     
   end
