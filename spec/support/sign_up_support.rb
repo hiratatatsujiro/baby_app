@@ -1,5 +1,5 @@
-module SignInSupport
-  def sign_in(user)
+module SignUpSupport
+  def sign_up(user)
     visit new_user_registration_path
     # ユーザー情報を入力する
     fill_in 'user[name]', with: @user.name
