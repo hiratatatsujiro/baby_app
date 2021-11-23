@@ -12,7 +12,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # トップページにサインアップページへ遷移するボタンがあることを確認する
       expect(page).to have_content('新規ユーザー登録')
       # 新規登録ページへ移動する
-      sign_in(@user)
+      sign_up(@user)
       # トップページへ遷移することを確認する
       # ログアウトボタンが表示されることを確認する
       expect(page).to have_content('ログアウト')
