@@ -134,3 +134,73 @@
   line-height: 40px;
   padding: 0 5px;
 }
+
+.menu-bar {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .child-show {
+    display: block;
+    background-color: blanchedalmond;
+    text-align: center;
+  }
+
+  .child-information {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .child-medical {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    display: block;
+    height: calc(100vh - 200px);
+    background-color: cornsilk;
+  }
+
+  .main-children {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .main-diary {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .child-show {
+    display: block;
+    background-color: blanchedalmond;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .child-information {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .child-medical {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .menu-bar {
+    display: block;
+    font-size: 45px;
+    padding-top: 15px;
+  }
+
+}
