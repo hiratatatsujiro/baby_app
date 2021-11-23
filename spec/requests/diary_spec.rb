@@ -24,14 +24,14 @@ describe DiariesController, type: :request do
       expect(response.body).to include(@diary.day.strftime('%Y年%m月%d日'))
     end
 
-    it 'showアクションにリクエストするとレスポンスに子どもの性別が存在する' do
+    it 'showアクションにリクエストするとレスポンスに日記が存在する' do
       get diary_path(@diary)
-      expect(response.body).to include(@child.gender.name)
+      expect(response.body).to include(@diary.text)
     end
 
-    it 'showアクションにリクエストするとレスポンスに通院登録のボタンが存在する' do
+    it 'showアクションにリクエストするとレスポンスにコメント投稿が存在する' do
       get diary_path(@diary)
-      expect(response.body).to include("通院登録")
+      expect(response.body).to include("コメント投稿")
     end
 
     

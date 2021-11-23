@@ -2,7 +2,7 @@
 
   <div class="medical-information">
     <div class="medical-day">
-      病気になった日：<%= @medical.day %>
+      病気になった日：<%= @medical.day.strftime('%Y年%m月%d日') %>
     </div>
     <div class="medical-name">
       病名：<%= @medical.name.name %>
