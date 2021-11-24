@@ -10,6 +10,9 @@
    <div class="medical-image">
       <%= image_tag @medical.image %>
    </div>
+   <div class="medical-image-responsive">
+      <%= image_tag @child.image.variant(resize: "250x250") %>
+    </div>
    <div class="medical-hospital">
       病院：<%= @medical.hospital %>
    </div>

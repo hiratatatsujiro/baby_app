@@ -2,7 +2,8 @@
   <div class="diary-box">
     <div class="diary-day">投稿日：<%= @diary.day.strftime('%Y年%m月%d日') %></div>
     <div class="diary-title">タイトル：<%= @diary.title %></div>
-    <div class="diary-image"><%= image_tag @diary.image %></div>
+    <div class="diary-image"><%= image_tag @diary.image.variant(resize: "600x600") %></div>
+    <div class="diary-image-responsive"><%= image_tag @diary.image.variant(resize: "250x250") %></div>
     <div class="diary-text"><%= @diary.text %></div>
   </div>
 

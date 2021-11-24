@@ -54,3 +54,38 @@
 .comment-medical-index {
   margin-top: 40px;
 }
+
+.medical-image-responsive {
+  display: none;
+}
+
+@media (max-width: 1000px){
+  .medical-show {
+    display: block;
+  }
+  
+}
+
+@media (max-width: 500px){
+  .medical-show {
+    display: block;
+  }
+
+  .medical-information {
+    padding: 40px;
+    text-align: center;
+    font-size: 12px;
+    background-color: blanchedalmond;
+  }
+
+  .medical-image {
+    display: none;
+  }
+
+  .medical-image-responsive {
+    display: block;
+    padding: 10px;
+    border: 1px solid black;
+    border-top: none;
+  }
+}
