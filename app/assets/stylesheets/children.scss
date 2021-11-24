@@ -139,6 +139,10 @@
   display: none;
 }
 
+.image-show-responsive {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .child-show {
     display: block;
@@ -180,7 +184,7 @@
     display: block;
     background-color: blanchedalmond;
     text-align: center;
-    font-size: 12px;
+    font-size: 20px;
   }
 
   .child-information {
@@ -201,6 +205,14 @@
     display: block;
     font-size: 45px;
     padding-top: 15px;
+  }
+
+  .image-show-responsive {
+    display: block;
+  }
+
+  .image-show {
+    display: none;
   }
 
 }
