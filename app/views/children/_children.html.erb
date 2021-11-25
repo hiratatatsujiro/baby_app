@@ -1,0 +1,8 @@
+<% if user_signed_in? && child.user_id == current_user.id %>
+  <%= link_to child_path(child) do %>
+    <div class="child-information">
+      <%= child.name %>
+      <%= image_tag child.image.variant(resize: '150x150')%>
+    </div>
+  <% end %> 
+<% end %>
