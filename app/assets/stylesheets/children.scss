@@ -143,6 +143,24 @@
   display: none;
 }
 
+.header-list-box {
+  padding: 10px;
+  position: absolute;
+  right: 40px;
+  font-size: 20px;
+  border: 1px solid black;
+  width: 40%;
+  background-color: white;
+  text-align: center;
+  border-radius: 4px;
+  display: none;
+}
+
+.header-list-box a{
+  text-decoration: none;
+  color: black;
+}
+
 @media (max-width: 1000px) {
   .child-show {
     display: block;
@@ -213,6 +231,10 @@
 
   .image-show {
     display: none;
+  }
+
+  .header-list-box {
+
   }
 
 }
