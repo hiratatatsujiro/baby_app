@@ -1,15 +1,14 @@
 function index() {
-  const menu_bar = document.getElementById("menu_bar");
-  const menu_box = document.getElementById("menu_box");
+  const menuBar = document.getElementById("menu_bar");
+  const menuBox = document.getElementById("header_list_box");
 
-  menu_bar.addEventListener("click", ()=>{
-    if (menu_box.getAttribute("")) {
-
+  menuBar.addEventListener("click", function() {
+    if (menuBox.getAttribute("style") == "display: block;") {
+      menuBox.removeAttribute("style", "display: block;")
     } else {
-
+      menuBox.setAttribute("style", "display: block;")
     }
-    menu_box.setAttribute()
-  });x
+  });
 }
 
 
