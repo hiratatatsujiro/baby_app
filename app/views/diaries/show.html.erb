@@ -11,18 +11,19 @@
     <div class="comment-new">
       <div class="comment-new-box">
         <div class="title-comment">コメント投稿</div>
-        <%= form_with model: [@diary, @comment], local: true do |f| %>
+        <%= form_with model: [@diary, @comment], id: "form", local: true do |f| %>
           <div class="form">
             <%= f.text_area :text, placeholder: "コメント", class: "comment-input" %>
           </div>
           <div class="action">
-            <%= f.submit "コメント", class: "submit-btn-comment" %>
+            <%= f.submit "コメント", class: "submit-btn-comment", id: "submit-diary" %>
           </div>
         <% end %>
       </div>
     </div>
     <div class="comment-index">
       <div class="comment-index-box">
+        <% if @comments %>
         <% @comments.each do |comment| %>
           <div class="comment-information">
             <div class="comment-user">
@@ -35,6 +36,7 @@
              <%= comment.text %>
             </div>
           </div>
+        <% end %>
         <% end %>
       </div>
     </div>
