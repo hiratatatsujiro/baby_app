@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     else
       @diary = Diary.find(params[:diary_id])
       @comment = Comment.new(comment_params)
+      @comments = @diary.comments
       render "diaries/show"
     end
   end
