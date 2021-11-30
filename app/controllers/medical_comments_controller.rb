@@ -5,8 +5,11 @@ class MedicalCommentsController < ApplicationController
     @medical_comment = MedicalComment.new(medical_comment_params)
     if @medical_comment.valid?
       @medical_comment.save
-      redirect_to child_medical_path(@medical.child, @medical)
+      render json:{medical_comment: @medical_comment, user_name: current_user.name}
     else
+      @child = Child.find(params[:child_id])
+      @medical = Medical.find(params[:medical_id])
+      @medical_comment = MedicalComment.new(medical_comment_params)
       render "medicals/show"
     end
   end
