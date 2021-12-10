@@ -25,6 +25,6 @@ class MedicalsController < ApplicationController
 
   private
   def medical_params
-    params.require(:medical).permit(:day, :image, :hospital, :drug_id, :name_id, :memo).merge(child_id: params[:child_id])
+    params.require(:medical).permit(:day, :hospital, :drug_id, :name_id, :memo, {images: []}).merge(child_id: params[:child_id])
   end
 end

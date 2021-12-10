@@ -19,6 +19,7 @@ const buildHTML = (XHR)=>{
 
 function ajaxMedical(){
   const submitMedical = document.getElementById("submit-medical");
+  if (!submitMedical){ return false;};
   submitMedical.addEventListener("click", (e)=>{
     e.preventDefault();
     const form = document.getElementById("form_medical");
