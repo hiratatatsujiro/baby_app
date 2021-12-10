@@ -10,7 +10,10 @@ require("channels")
 require("../index.js")
 require("../ajax")
 require("../ajax_medical")
-require("../preview")
+require("../preview_diary")
+require("../preview_child")
+require("../preview_medical")
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

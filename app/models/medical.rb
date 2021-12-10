@@ -1,7 +1,7 @@
 class Medical < ApplicationRecord
   has_many :medical_comments
   belongs_to :child
-  has_one_attached :image
+  has_many_attached :images
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :drug
   belongs_to :name
@@ -9,7 +9,7 @@ class Medical < ApplicationRecord
   with_options presence:true do
     validates :day
     validates :hospital
-    validates :image
+    validates :images
   end  
 
   with_options numericality: { other_than: 1 } do

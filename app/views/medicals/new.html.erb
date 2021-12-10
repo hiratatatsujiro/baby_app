@@ -1,7 +1,7 @@
 <div class="devise-main">
 <h1 class="login-title">病気登録</h1>
 
-<%= form_with model: [@child, @medical], class: "form-main", local: true do |f| %>
+<%= form_with model: [@child, @medical], id: "form-medical", class: "form-main", local: true do |f| %>
   
   
    <div class="form-detail">
@@ -31,8 +31,10 @@
     <div class="content">
      <label class="image">画像</label>
     </div>
-  <%= f.file_field :image %>
-  </div>
+      <%= f.file_field :images, name: "medical[images][]" %>
+   </div>
+
+  <div id="previews" class="make-image"></div>
 
   <div class="field">
     <div class="content">

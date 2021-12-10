@@ -1,7 +1,7 @@
 <div class="devise-main">
 <h1 class="login-title">日記</h1>
 
-<%= form_with model: @diary, url: diaries_path, class: "form-main", local: true do |f| %>
+<%= form_with model: @diary, url: diaries_path, id: "form-diary", class: "form-main", local: true do |f| %>
   
    <div class="form-detail">
     <%= render "devise/shared/error_messages", resource: @diary %>
@@ -18,6 +18,8 @@
     </div>
   <%= f.file_field :image %>
   </div>
+  
+  <div id="previews"></div>
 
   <div class="field">
     <div class="content">

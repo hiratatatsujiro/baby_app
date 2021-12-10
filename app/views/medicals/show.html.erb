@@ -8,7 +8,9 @@
       病名：<%= @medical.name.name %>
    </div>
    <div class="medical-image">
-      <%= image_tag @medical.image %>
+      <% @medical.images.each do |image| %>
+      <%= image_tag image %>
+      <% end %>
    </div>
    <div class="medical-image-responsive">
       <%= image_tag @child.image.variant(resize: "250x250") %>

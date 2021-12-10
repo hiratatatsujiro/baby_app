@@ -19,6 +19,7 @@ const buildHTML = (XHR)=>{
 
 function ajax(){
   const submitDiary = document.getElementById("submit-diary");
+  if (!submitDiary){ return false;};
   submitDiary.addEventListener("click", (e)=>{
     e.preventDefault();
     const form = document.getElementById("form");
