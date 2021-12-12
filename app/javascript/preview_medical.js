@@ -13,7 +13,14 @@ document.addEventListener("DOMContentLoaded", function(){
         child.setAttribute("class", "preview-image");
         child.setAttribute("src", image);
 
+        const deleteButton = document.createElement("div");
+        deleteButton.setAttribute("class", "image-delete-button");
+        deleteButton.innerText = "削除"
+
+        deleteButton.addEventListener("click", () => deleteImage(dataIndex));
+
         parent.appendChild(child);
+        parent.appendChild(deleteButton);
         previewSpace.appendChild(parent);
     };
     
@@ -34,11 +41,24 @@ document.addEventListener("DOMContentLoaded", function(){
         const newImageSpace =  document.querySelector(".make-image");
         newImageSpace.appendChild(newImage);     
     };
+
+    const deleteImage = (dataIndex) => {
+      const deletePreviewImage = document.querySelector(`.preview[data-index='${dataIndex}']`);
+      const inputNumber = Number(dataIndex) +1;
+      deletePreviewImage.remove();
+      const deleteFileField = document.querySelector(`input[type='file'][data-index='${inputNumber}']`);
+      deleteFileField.remove();
+    } 
     
     const changedFileField = (e) => {
       const dataIndex = e.target.getAttribute('data-index');
       const file = e.target.files[0];
      
+      if(!file){
+        deleteImage(dataIndex);
+        return null;
+      }
+
       const image = window.URL.createObjectURL(file);
      
       const alreadyPreview = document.querySelector(`.preview[data-index='${dataIndex}']`);

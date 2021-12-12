@@ -161,6 +161,14 @@
   color: black;
 }
 
+.image-delete-button {
+  width: 20%;
+  margin: 0 auto;
+  border: solid 1px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
 @media (max-width: 1000px) {
   .child-show {
     display: block;
