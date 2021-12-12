@@ -31,7 +31,7 @@
     <div class="content">
      <label class="image">画像</label>
     </div>
-      <%= f.file_field :images, name: "medical[images][]" %>
+      <%= f.file_field :images, name: "medical[images][]", data: {index: 0} %>
    </div>
 
   <div id="previews" class="make-image"></div>
