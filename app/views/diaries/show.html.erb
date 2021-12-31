@@ -5,6 +5,7 @@
     <div class="diary-image"><%= image_tag @diary.image.variant(resize: "600x600") %></div>
     <div class="diary-image-responsive"><%= image_tag @diary.image.variant(resize: "250x250") %></div>
     <div class="diary-text"><%= @diary.text %></div>
+      <%= link_to "編集する", edit_diary_path, class: "edit-btn" %>
   </div>
 
   <div class="comment-box">
@@ -47,3 +48,4 @@
   </div>
 
 </div>
+<% breadcrumb :diaries %>
