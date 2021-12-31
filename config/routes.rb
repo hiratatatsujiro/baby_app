@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :medical_comments, only: [:create]
     end
   end
-  resources :diaries, only: [:new, :create, :show] do
+  resources :diaries, only: [:new, :create, :show, :edit, :update] do
     resources :comments, only: [:create]
   end
 end
