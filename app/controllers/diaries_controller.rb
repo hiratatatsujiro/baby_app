@@ -24,7 +24,7 @@ class DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
     if @diary.valid?
-      binding.pry
+      @diary.update(diary_params)
       @diary.save
       redirect_to diary_path(@diary)
     else
