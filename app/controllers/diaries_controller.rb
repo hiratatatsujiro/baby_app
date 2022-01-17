@@ -1,7 +1,7 @@
 class DiariesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :move_to_index, only: :show
+  before_action :move_to_index, only: [:show, :edit, :update]
   before_action :find_params, only: [:edit, :update, :show, :destroy]
   
   def new
