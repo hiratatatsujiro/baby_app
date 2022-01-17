@@ -19,19 +19,14 @@ class MedicalsController < ApplicationController
   end
 
   def show
-    
     @medical_comment = MedicalComment.new
     @medical_comments = @medical.medical_comments.order("created_at DESC")
   end
 
   def edit
-   
-    @medical = Medical.find(params[:id])
   end
 
   def update
-   
-    @medical = Medical.find(params[:id])
     if @medical.valid?
       @medical.update(medical_params)
       redirect_to child_medical_path(@child)
@@ -43,8 +38,6 @@ class MedicalsController < ApplicationController
   end
 
   def destroy
-   
-    
     @medical.destroy
     redirect_to child_path(@child)
   end
