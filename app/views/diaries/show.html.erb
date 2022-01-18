@@ -41,6 +41,7 @@
             <div class="comment-text">
              <%= comment.text %>
             </div>
+            <%= link_to "削除", diary_comment_path(@diary, comment), method: :delete %>
           </div>
         <% end %>
         <% end %>
