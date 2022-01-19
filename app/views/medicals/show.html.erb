@@ -57,6 +57,7 @@
             <div class="comment-text">
              <%= comment.content %>
             </div>
+            <%= link_to "削除", child_medical_medical_comment_path(@child, @medical, comment), method: :delete %>
           </div>
             <% end %>
          </div>
