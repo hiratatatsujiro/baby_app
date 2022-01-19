@@ -13,6 +13,15 @@ class MedicalCommentsController < ApplicationController
       render "medicals/show"
     end
   end
+
+  def destroy
+    @child = Child.find(params[:child_id])
+    @medical = Medical.find(params[:medical_id])
+    @medical_comment = MedicalComment.find(params[:id])
+    @medical_comment.destroy
+    redirect_to child_medical_path(@child, @medical)
+  end  
+
   private
   def medical_comment_params
     params.require(:medical_comment).permit(:content).merge(user_id: current_user.id, child_id: params[:child_id], medical_id: params[:medical_id])
