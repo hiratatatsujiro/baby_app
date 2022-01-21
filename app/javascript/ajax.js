@@ -12,6 +12,7 @@ const buildHTML = (XHR)=>{
         <div class="comment-text">
           ${item.text}
         </div>
+        <a rel="nofollow" href="/diaries/${item.diary_id}/comments/${item.id}" data-method="delete">削除</a>
       </div>
       `;
       return html;
