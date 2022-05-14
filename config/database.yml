@@ -14,7 +14,11 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
+<<<<<<< Updated upstream
   password:
+=======
+  password: 
+>>>>>>> Stashed changes
   socket: /tmp/mysql.sock
 
 development:
