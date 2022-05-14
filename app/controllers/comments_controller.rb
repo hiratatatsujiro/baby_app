@@ -4,12 +4,20 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.valid?
       @comment.save
-      redirect_to diary_path(@diary)
+      render json:{comment: @comment, user_name: current_user.name}
     else
       @diary = Diary.find(params[:diary_id])
       @comment = Comment.new(comment_params)
+      @comments = @diary.comments
       render "diaries/show"
     end
+  end
+
+  def destroy
+    @diary = Diary.find(params[:diary_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to diary_path(@diary)
   end
 
   private

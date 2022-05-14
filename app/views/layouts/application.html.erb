@@ -12,6 +12,20 @@
 
   <body>
      <%= render "layouts/header" %>
+     <div class="menu-box" id="menu_box">
+     <% if user_signed_in? %>
+      <ul class="header-list-box" id="header_list_box">
+        <li><%= link_to current_user.name %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
+      </ul>
+    <% else %>
+      <ul class="header-list-box" id="header_list_box">
+        <li><%= link_to "新規ユーザー登録", new_user_registration_path %></li>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
+      </ul>
+    <% end %>
+  </div>
+    <%= breadcrumbs separator: " &rsaquo; ", class: "hamberger" %> 
     <%= yield %>
   </body>
 </html>

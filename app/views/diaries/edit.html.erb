@@ -1,15 +1,15 @@
 <div class="devise-main">
-<h1 class="login-title">子どもの登録</h1>
+<h1 class="login-title">日記</h1>
 
-<%= form_with model: @child, url: children_path, id:"form-child", class: "form-main", local: true do |f| %>
+<%= form_with model: @diary, url: diary_path(@diary), id: "form-diary", class: "form-main", local: true do |f| %>
   
    <div class="form-detail">
-    <%= render "devise/shared/error_messages", resource: @child %>
+    <%= render "devise/shared/error_messages", resource: @diary %>
   <div class="field">
     <div class="content">
-     <label class="name">名前</label>
+     <label class="name">タイトル</label>
     </div>
-  <%= f.text_field :name ,class: "login-box"%>
+  <%= f.text_field :title ,class: "login-box"%>
   </div>
 
   <div class="field">
@@ -18,24 +18,24 @@
     </div>
   <%= f.file_field :image %>
   </div>
-
+  
   <div id="previews"></div>
 
   <div class="field">
     <div class="content">
-     <label class="name">性別</label>
+     <label class="text">テキスト</label>
     </div>
-  <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {}) %>
+  <%= f.text_area :text %>
   </div>
 
   <div class="field">
     <div class="content">
     <div class="input-birth">
-     <label class="name">生年月日</label>
+     <label class="name">日付</label>
     
             <%= raw sprintf(
                   f.date_select(
-                    :birthday,
+                    :day,
                     class:'select-birth',
                     id:"diary-date",
                     use_month_numbers: true,
@@ -49,7 +49,7 @@
    </div>
 
    <div class="actions">
-    <%= f.submit "登録", class: "submit-btn" %>
+    <%= f.submit "投稿", class: "submit-btn" %>
   </div>
 
 <% end %>

@@ -17,7 +17,7 @@
       <%= @child.gender.name %>
     </div>
   </div>
-
+<% breadcrumb :children %>
   <div class="child-medical">
     <div class="register-child">
      <%= link_to "通院登録", new_child_medical_path(@child), class: "child-btn" %>

@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        city: 市区町村
+        prefectures_id: 都道府県
+      diary:
+        title: タイトル
+        text: テキスト
+        image: 画像
+        day: 日付
+      child:
+        name: 名前
+        gender_id: 性別
+        image: 画像
+        birthday: 誕生日
+      medical:
+        drug_id: 薬の名前
+        name_id: 病名
+        images: 画像
+        day: 日付
+        hospital: 病院

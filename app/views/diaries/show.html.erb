@@ -5,24 +5,31 @@
     <div class="diary-image"><%= image_tag @diary.image.variant(resize: "600x600") %></div>
     <div class="diary-image-responsive"><%= image_tag @diary.image.variant(resize: "250x250") %></div>
     <div class="diary-text"><%= @diary.text %></div>
+      <%= link_to "編集する", edit_diary_path, class: "edit-btn" %>
+      <%= link_to "削除する", diary_path, method: :delete, class: "edit-btn" %>
   </div>
 
   <div class="comment-box">
     <div class="comment-new">
       <div class="comment-new-box">
         <div class="title-comment">コメント投稿</div>
-        <%= form_with model: [@diary, @comment], local: true do |f| %>
+        <%= form_with model: [@diary, @comment], id: "form", local: true do |f| %>
           <div class="form">
-            <%= f.text_area :text, placeholder: "コメント", class: "comment-input" %>
+            <%= f.text_area :text, placeholder: "コメント", class: "comment-input", id: "form_text" %>
           </div>
           <div class="action">
-            <%= f.submit "コメント", class: "submit-btn-comment" %>
+            <%= f.submit "コメント", class: "submit-btn-comment", id: "submit-diary" %>
           </div>
         <% end %>
       </div>
     </div>
     <div class="comment-index">
       <div class="comment-index-box">
+      
+      <div id="list">
+      </div>
+
+        <% if @comments %>
         <% @comments.each do |comment| %>
           <div class="comment-information">
             <div class="comment-user">
@@ -34,10 +41,15 @@
             <div class="comment-text">
              <%= comment.text %>
             </div>
+            <% if comment.user_id == current_user.id %>
+              <%= link_to "削除", diary_comment_path(@diary, comment), method: :delete %>
+            <% end %>
           </div>
+        <% end %>
         <% end %>
       </div>
     </div>
   </div>
 
 </div>
+<% breadcrumb :diaries %>

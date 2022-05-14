@@ -14,15 +14,11 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-<<<<<<< Updated upstream
   password:
-=======
-  password: 
->>>>>>> Stashed changes
   socket: /tmp/mysql.sock
 
 development:
-  <<: *default
+  <<: *default        
   database: baby_app_development
 
 # Warning: The database defined as "test" will be erased and

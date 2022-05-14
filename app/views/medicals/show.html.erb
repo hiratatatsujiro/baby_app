@@ -8,7 +8,9 @@
       病名：<%= @medical.name.name %>
    </div>
    <div class="medical-image">
-      <%= image_tag @medical.image %>
+      <% @medical.images.each do |image| %>
+      <%= image_tag image %>
+      <% end %>
    </div>
    <div class="medical-image-responsive">
       <%= image_tag @child.image.variant(resize: "250x250") %>
@@ -22,24 +24,30 @@
    <div class="medical-memo">
       メモ：<%= @medical.memo %>
    </div>
+      <%= link_to "編集する", edit_child_medical_path, class: "edit-btn" %>
+      <%= link_to "削除する", child_medical_path, method: :delete, class: "edit-btn" %>
   </div>
 
    <div class="medical-comment">
       <div class="comment-new-medical-box">
-        <%= form_with model: [@child, @medical, @medical_comment], local: true do |f| %>
+        <%= form_with model: [@child, @medical, @medical_comment], id: "form_medical", local: true do |f| %>
         コメントする
         <div class="form">
-            <%= f.text_area :content, placeholder: "コメント", class: "comment-input" %>
+            <%= f.text_area :content, placeholder: "コメント", class: "comment-input", id: "form-content" %>
           </div>
           <div class="action">
-            <%= f.submit "コメント", class: "submit-btn-comment" %>
+            <%= f.submit "コメント", class: "submit-btn-comment", id: "submit-medical" %>
           </div>
         <% end %>
       </div>
+
       <div class="comment-medical-index">
+      <div id="list-medical">
+      </div>
+
          <div class="medical-comment-index">
             <% @medical_comments.each do |comment| %>
-               <div class="comment-information">
+            <div class="comment-information">
             <div class="comment-user">
               投稿者：<%= comment.user.name %>
             </div>
@@ -49,9 +57,11 @@
             <div class="comment-text">
              <%= comment.content %>
             </div>
+            <%= link_to "削除", child_medical_medical_comment_path(@child, @medical, comment), method: :delete %>
           </div>
             <% end %>
          </div>
       </div>
    </div>
 </div>
+<% breadcrumb :medicals %>

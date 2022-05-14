@@ -1,7 +1,8 @@
 class DiariesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :move_to_index, only: :show
+  before_action :move_to_index, only: [:show, :edit, :update]
+  before_action :find_params, only: [:edit, :update, :show, :destroy]
   
   def new
     @diary = Diary.new
@@ -17,11 +18,32 @@ class DiariesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def update
+    
+    if @diary.valid?
+      @diary.update(diary_params)
+      @diary.save
+      redirect_to diary_path(@diary)
+    else
+      render :edit
+    end
+  end
+
 
   def show
-    @diary = Diary.find(params[:id])
+    
     @comment = Comment.new
     @comments = @diary.comments
+  end
+
+  def destroy
+   
+    @diary.destroy
+    redirect_to root_path
   end
 
 
@@ -35,6 +57,10 @@ class DiariesController < ApplicationController
       unless user_signed_in? && current_user.id == @diary.user_id
         redirect_to root_path
       end
+    end
+
+    def find_params
+      @diary = Diary.find(params[:id])
     end
   
 end

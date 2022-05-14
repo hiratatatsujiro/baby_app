@@ -2,12 +2,30 @@
 .header {
   height: 100px;
   background-color: rgb(137, 220, 245);
+  animation: myAnime 4s;
 }
+@keyframes myAnime {
+  50% {
+    background-color: rgb(0, 204, 255);
+  }
+  100% {
+    background-color: rgb(0, 30, 128);
+  }
+} 
 
 .header a {
   text-decoration: none;
   color: black;
+  animation: myFont 4s;
 }
+@keyframes myFont {
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+} 
 
 .header-left {
   font-size: 48px;
@@ -143,6 +161,36 @@
   display: none;
 }
 
+.header-list-box {
+  padding: 10px;
+  position: absolute;
+  right: 40px;
+  font-size: 20px;
+  border: 1px solid black;
+  width: 40%;
+  background-color: white;
+  text-align: center;
+  border-radius: 4px;
+  display: none;
+}
+
+.header-list-box a{
+  text-decoration: none;
+  color: black;
+}
+
+.image-delete-button {
+  width: 20%;
+  margin: 0 auto;
+  border: solid 1px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.hamberger {
+  background-color: rgb(0, 217, 255);
+}
+
 @media (max-width: 1000px) {
   .child-show {
     display: block;
@@ -207,12 +255,10 @@
     padding-top: 15px;
   }
 
-  .image-show-responsive {
-    display: block;
-  }
 
   .image-show {
     display: none;
   }
+
 
 }
